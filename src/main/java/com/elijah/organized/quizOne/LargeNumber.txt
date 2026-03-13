@@ -1,0 +1,52 @@
+//exercise one
+Write a method that returns the largest number found in a given integer array. After solving, explain the time and space complexities.
+
+i. Understand the problem
+
+ input : an array  int[] nums = [1,2,1,6,3,8, 4];
+ output :  result which is an interger : returns type will be an interger   in this case 8
+ edge case if the array is empty we will return 0
+
+
+ii. Match : we use array in this case with for loop or using Array.sort (higher complexity
+
+iii. Plan
+1. we can declare an result
+ int result =0 ; (O(1)
+
+2. Option A we need to use an array as we  need to access specific item in an array
+  we will loop through each element in the array to compare it with the previous so that we check whats the largest between them
+   for int i = 0; i < nums.length; i++){
+      if(nums[i] > result) { // here we will check if from index 0 of array is greater than the result / we assign that number to the result
+	   result = nums[i]  //o(1)
+	  } //else we ignore
+   }
+
+   //then return result;
+
+   so we will have O(1) + n* O(1) + O(1)
+       T = c1 + n*c1 + c1
+	     c2 + n*c1
+		 remove  coefficient
+		 we have n
+		 so t = O(n)
+
+		 space complexity is  o(1)
+
+2. Option B or we use Array.Sort(nums) and then get the last item in that array
+i.e var result = given_array[given_array.Length -1]  -1 becuase arrays starts from 0
+
+implementation
+  public int  getLargeInterger(int[] nums)
+  {
+    Array.Sort(nums)  // O(n log n)
+
+	return nums[nums.Length - 1] // O(1)
+  }
+
+  evalatuation is this is of time complexity of O(n log n)
+    space complexity is o(log n) for sort
+
+  //which do i use
+
+  first one as it will perform better than the two

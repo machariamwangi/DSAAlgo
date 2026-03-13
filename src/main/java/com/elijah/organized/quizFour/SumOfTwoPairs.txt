@@ -1,0 +1,70 @@
+problem: Write a method that finds two numbers in an array whose sum equals a given target. Return the two numbers if found;
+ otherwise return a “no solution” message. Use a nested-loops (brute-force) approach.
+
+ Understand
+ input : an array of intergers  and int target
+ Output  two numbers  or string  “no solution”
+ // whats bruteforce
+
+ // i dont know  how to return two  data types seperatly apart from assuming that i use na object which is not good for memory   so i will use obkect
+
+ Master
+ would assume to be recursion but we have been directed to nested loop
+
+ Plan
+ get array of numbers  int[] numbers  =  new int[] {1,2,3,4,5,6,7}
+  get  target   7
+  so return should be (int , int)
+  if 19 return no solution
+
+  what I will do is  have two for loops
+  1st one  to get first number
+  then second one goes through the others to make sure probably  there is a match
+
+return  two pairs if the sum is achieved
+
+
+public object SumOfTwoPairst(int[] numbers, int target)
+{
+ //we have two holder i and J which as constant (0(1)
+
+ //the for loop to return will have to run n times * n times ie. if array length is 10 they will run 100 times
+
+  // n^2 * O(1)
+ //
+  for(int i = 0; i < numbers.length; i++)
+  {
+    for(int j = i + 1; j< numbers.length; j++)
+    {
+       if (numbers[i] + numbers[j] == target)
+        {
+          // Return the pair as an int array
+           return new int[]{numbers[i], numbers[j]};  // this will make the loop to terminate  incase the answer is found  // O(1)
+         }
+    }
+  }
+
+  // if no solution
+   return "no solution"; // O(1)
+
+   //if we remove coeffiecient we will have O(n^2)
+   // space conflexity does change so we have O(1)
+}
+
+ Implement
+
+ Review
+
+ what of there are more than two pairs?
+
+
+ Evaluate
+
+    //time complexity  have O(n^2)
+    // space conflexity does change so we have O(1)
+
+    To answer : If the array has 500 elements, how many comparisons might occur in the worst case? Explain.
+
+    the outer loop can run 500 times , but the inner loop will probably run 499 ,498 less times
+    so this will rub quadraticly  so worst case is 500 * 500-1 /2 since on the  inner loop we run  n-1
+    so  124,750

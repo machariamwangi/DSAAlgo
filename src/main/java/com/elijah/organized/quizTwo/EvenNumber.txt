@@ -1,0 +1,60 @@
+Problem : Write a method that returns how many even integers are present in a given array
+         : If the array has 500 elements, how many loop iterations will run? Explain.
+		 :
+
+
+I. Understand
+  I would have asked whether we want to return the actual even numbers or the count of even  numbers
+   I will assume its the count
+
+   .Input = array  int[] = {1,2,3,4,5,6,7,8,9}
+    output int
+	maybe to note an even number is divisible by two and does not have a reminder
+	in the case we can  use modulas
+
+
+II. Master
+ yet to fully understand master   in many scenarious
+
+III. Plan
+  we initialized an int to old  the sum  (count of even numbers)
+ //we can use foreach here as we  wont collect any  element in array
+ for every element  we modulas with 2 if the result is  0 we add the count  by 1
+ return the count
+ public int countOfEvenNumbers(int [] nums)
+ {
+    int totalEvenNumbers = 0;  // (0(1))
+
+	foreach(int num in nums) {   // this runs n times  nums.length   //nb : foreach is in c# and not in java ,java uses for loop
+	if(num % 2 == 0) {
+	   totalEvenNumbers  += 1;  // O(1)
+	  }  //else we know it's an odd number
+	}
+
+	return totalEvenNumbers; // o(1)
+ }
+
+
+//so we have
+
+space complexity    doesn't change (constant totalEvenNumbers,  const num )  =  O(1)
+
+time complexity
+ O(n)
+
+IV. Implement
+
+
+V. Review
+The for-each loop iterates through every element in the array exactly once, regardless of whether the numbers are even or odd. So:
+
+Array size = 500  Loop iterations will be  500
+
+i also  get the correct input
+
+VI. Evaluate
+
+space complexity    doesn't change (constant totalEvenNumbers,  const num )  =  O(1)
+
+time complexity
+ O(n)

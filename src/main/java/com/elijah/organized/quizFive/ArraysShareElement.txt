@@ -1,0 +1,50 @@
+problem : Write a method that checks whether two arrays share at least one element. Return true if they do, otherwise false.
+Use a brute-force (nested loops) solution.
+
+Understand
+input two arrays (am assuming them to be of int) and i can make it dynamic later)
+output true/false
+
+Master
+----nested loops (for loops)
+Plan
+comparing to the other question I will follow same approach difference  being on the inner loop we start from index 0
+so we compare the outer and inner if they match incase return true
+
+int[] numsArray1 =  new int[] {6,7,2,9};
+int[] numsArray2 = new int[] {1,2,3,4};
+
+public bool arraysShareElement(numsArray1, numsArray2)
+{
+   for(int i =0; i < numsArray1.length; i++) {  //O(1)
+      for(int j =0 ; j< numsArray2.length; j++) {  // O(1)
+         if(numsArray1[1] == numsArray2[j]){
+           return true
+         }
+      }
+   }
+
+   //if nothing matches
+   return false;
+}
+
+on time complexity since we have n * n *(O(1))
+we have O(n^2)
+space complexity is O(1);
+
+
+
+Implement
+..
+Review
+go desired resullt
+Evaluate
+
+we have  Time complexity of O(n^2)
+and space complexity is O(1);
+
+
+To answer If both arrays have 500 elements, how many comparisons might occur in the worst case? Explain.
+just wondering of the matching element is on the last index of both arrays
+it means they would do 500*500 = 250, 000 times
+

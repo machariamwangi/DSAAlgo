@@ -1,0 +1,63 @@
+Problem : 3. Write a Java method that returns a new array containing the elements reversed. Do not use built-in reverse functions.
+          a) Explain the time complexity.
+          b) Explain the space complexity if you create a new array.
+
+ Understand
+input is an array (dynamic type could be int , string )  // how do i do  dnymabic inputs
+output is an array
+assume its a int or string then check dynamic method
+
+ MASTER///
+
+
+ Plan
+assume its a string
+convert the string to a character array
+char[] chars = input.toCharArray();
+
+create an empty array with the length of the existing one
+char[] reversed = new cha[chars.length];
+ we can loop through the array
+
+ take the last element var lastelement   input[input.length -1 -i ];  if 8 -1 = 7-0 , next is 7-1, 7-2 ....7.7
+
+reversed[i] = lastelement
+
+return the reversed
+
+
+
+
+//Nb its not efficient interms of memory as we have two arrays of the same size
+we can use the swap method (pointers ) but am yet to understand better
+
+trial 2 for pointers
+convert the string to a character array
+char[] chars = input.toCharArray();
+int left = 0;
+int right = input.length -1;
+
+as long as left is less than right
+
+we create a temporary holder  starting from item on index o (left)
+
+replace the one on 0 with the last one input.length-1 (right)
+then add replace the light one with  left one shift it to the end
+
+//increment  left and decrease right in the end
+
+out the loop (while)
+convert the array back tp string
+ Implement
+
+
+ Review
+
+ Go correct reversal of strings
+
+ Evaluate
+
+ 1st one has Time complexity of O(n) and space complexity of O(n)
+
+ 2nd one  has Time complexity of O(1) and space complexity og O(1)
+
